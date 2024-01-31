@@ -7,7 +7,6 @@ from awsglue.job import Job
 from awsglue import DynamicFrame
 from awsglue.dynamicframe import DynamicFrame
 
-print("HIHI")
 def sparkSqlQuery(glueContext, query, mapping, transformation_ctx) -> DynamicFrame:
     for alias, frame in mapping.items():
         frame.toDF().createOrReplaceTempView(alias)
